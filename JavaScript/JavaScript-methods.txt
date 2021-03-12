@@ -1,0 +1,32 @@
+// === type and value
+// ==  just value
+
+// indexOf()                 find a string in another string if it can't find , it will return -1
+// lastIndexOf()             find last principle of a string in another string
+// search()                  find a text in another text
+// substring(start , end)    extraction a string of a another string
+// substr(start , end)       extraction a string of a another string
+// replace(string , string)  replace a string
+// toFixed(number)           specify fraction digits of a number
+// number(everything)        convert everything to number
+// for of                    use for values of arrays
+// for in                    use for indexes of arrays
+// join(separator)           convert arrays to string and separates its values with "separator"
+
+// pop()                     returns last element of arrays
+// shift()                   delete first index of array
+
+// unshift(element)          add "element" to first of array
+// push(element)             add a "element" to end of array
+// navigator                 a class for information about app , version and ...
+// setTimeOut("x" , "time")  x is a handler and must be a string. it can be name of a function
+// concat()                  concat two or more arrays                                                                  *** return a string or array"
+// split("separator")        convert String to a Char array                                                             *** on string and return array ***
+// splice(index , x)         delete index in array from index until x                                                   *** void and return array ***
+// slice(x , y)              return a copy of array from x until y                                                      **** return array *****
+// JSON.parse()              convert String to object JSON
+// forEach()                                                                                                            **** void *********
+
+** map( element => console.log(element))      perform action on element                                                 **** void *********
+** filter( element => element.id === x)      delete element which equal x                                               **** callback *****
+// find( element => element )                                                                                           **** callback *****
