@@ -22,8 +22,9 @@ RUN mvn package -DskipTests
 ENTRYPOINT [ "java","-jar","/app/target/[projectname]0.0.1-SNAPSHOT.jar" ]
 ```
 
-This image includes a _JDK_ and _MAVEN_ to run java application and run _MVN_ command.
-In line 4, _**-DskipTests**_ is used to skip tests to create a jar file.
+_**maven:3.6.3-jdk-11-openj9**_ image includes a _**JDK**_ and _**MAVEN**_ platform to run java application and run _MVN_ commands.
+_mvn package _ take the compiled code and package it in its distributable format , such as a JAR.
+_**-DskipTests**_ is used to skip tests to create a jar file.
 
 ### A simple docker-compose.yml to connect Dockerfile above and postgresql container
 ```
@@ -53,7 +54,7 @@ services:
       - POSTGRES_DB=user
 ```
 
-The most important point is environments.
+The most important point is environments. Those environments are used instead of _**application.properties**_ file.
 
 ## A simple Dockerfile to create a image for react project and run it with nginx and viewing The Interactive Cypress Test Runner In Docker
 ```

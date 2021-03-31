@@ -1,6 +1,6 @@
-## Unit Testing SpringBoot project connected to the PostgreSql
+## Unit Testing
 
-tests for 
+tests for : 
 ```
  @PostMapping(value = "/users")
     public something addUser(@RequestParam String id, @RequestParam String name, @RequestParam String emailAddress) {
@@ -63,3 +63,6 @@ you need to provide them manually by mocking those objects.
 @WebMvcTest also auto-configures MockMvc.
 MockMVC offers a powerful way to quickly test MVC controllers without needing to start a full HTTP server.
 
+### JSONValue
+
+JsonValue represents an immutable JSON value. A JSON value is one of the following: an object ( JsonObject ), an array ( JsonArray ), a number ( JsonNumber ), a string ( JsonString ), true ( JsonValue. TRUE ), false ( JsonValue. FALSE ), or null ( JsonValue ).
