@@ -27,3 +27,21 @@ spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.H2Dialect
 spring.jpa.show-sql=true
 server.port=8082
 ```
+___
+
+`mvn -N io.takari:maven:wrapper`:
+Furthermore, to run MVN commands like Docker, Travis-CI needs to create .mvn dir
+before installing phases.
+___
+
+`mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V`:
+
+To create a jar file of project, you must ignore running tests.
+
+- -DskipTests ==> compiles the tests, but skips running them
+  
+
+- -Dmaven.test.skip.exec=true ==> the tests get compiled, but not executed.
+
+
+- -Dmaven.test.skip=true ==> doesn't compile or execute the tests.
