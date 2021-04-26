@@ -54,13 +54,13 @@ but that's the basic idea.
 
 
 ### **_@WebMvcTest(value = ExampleController.class)_**
-@WebMvcTest annotation will load only the controller layer of the application.
+**_@WebMvcTest_** annotation will load only the controller layer of the application.
 This will scan only the @Controller/ @RestController annotation and will not load the fully ApplicationContext.
 If there is any dependency in the controller layer (has some dependency to other beans from your service layer),
 you need to provide them manually by mocking those objects.
 
 ### **_MockMvc_**
-@WebMvcTest also auto-configures MockMvc.
+**_@WebMvcTest_** also auto-configures MockMvc.
 MockMVC offers a powerful way to quickly test MVC controllers without needing to start a full HTTP server.
 
 ### JSONValue
