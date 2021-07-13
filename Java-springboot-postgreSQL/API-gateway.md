@@ -16,13 +16,13 @@ Now, to send a request in the json form you need below code:
 headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 ```
 
-Then create a instance of HTTPEntity that explained in integration-testing section like this:
+Then create an instance of HTTPEntity that explained in integration-testing section like this:
 
 ```
-HttpEntity<DataClass> entity = new HttpEntity<DataClass>(user,headers);
+HttpEntity<ModelClass> entity = new HttpEntity<ModelClass>(user,headers);
 ```
 
-**_DataClass_** is your data that you want to send that in form a class(Data in here).
+**_ModelClass_** is your data that you want to send that in form a class(Data in here).
 
 To send a sample request look below code:
 ```
@@ -30,7 +30,7 @@ To send a sample request look below code:
                 url + "/users",
                 HttpMethod.POST,
                 entity,
-                DataClass.class);
+                ModelClass.class);
 ```
 
 Your method must have an annotation named **_@CrossOrigin_** and return the **_ResponseEntity<DataClass>**_ object.

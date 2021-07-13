@@ -56,7 +56,7 @@ services:
 
 The most important point is environments. Those environments are used instead of _**application.properties**_ file.
 
-## A simple Dockerfile to create a image for react project and run it with nginx and viewing The Interactive Cypress Test Runner In Docker
+## A simple Dockerfile to create an image for react project and run it with nginx and viewing The Interactive Cypress Test Runner In Docker
 ```
 FROM node:14-alpine as builder
 RUN apk add --no-cache git

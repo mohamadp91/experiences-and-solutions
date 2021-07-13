@@ -3,7 +3,7 @@ ___
 
 ```
 cmake_minimum_required(VERSION 3.16)
-project([project name])
+project(xper-cpp)
 
 
 set(CMAKE_CXX_FLAGS_DEBUG_INIT "-Wall")
@@ -11,10 +11,11 @@ set(CMAKE_CXX_FLAGS_RELEASE_INIT "-Wall")
 set(SOURCE_FILES
         src/main.cpp
         src/window/MyWindow.cpp
-        src/editor_container/EditorContainer.cpp
-        src/headerbar/MyHeaderBar.cpp)
+        src/headerbar/MyHeaderBar.cpp
+        src/drawer/Drawer.cpp
+        src/drawer/DrawerContainer.cpp)
 
-add_executable([project name] ${SOURCE_FILES})
+add_executable(xper-cpp ${SOURCE_FILES})
 
 
 find_package(PkgConfig REQUIRED)
@@ -31,14 +32,17 @@ target_link_libraries(xper-cpp ${GTK3_LIBRARIES})
 
 file(COPY resource DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY resource DESTINATION ${CMAKE_BINARY_DIR})
+file(TO_CMAKE_PATH style FILE_PATH_NORMALIZED)
 
 ### install the project
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
 
 install(TARGETS xper-cpp DESTINATION bin)
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include DESTINATION include)
-install(DIRECTORY ${GTK3} DESTINATION lib)
+install(DIRECTORY ${GTK3_LIBRARY_DIRS} DESTINATION lib)
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/resource DESTINATION files)
+
+
 
 ```
 
@@ -96,3 +100,20 @@ This variable defaults to _**/usr/local**_ on _**UNIX**_ and **_c:/Program Files
 See CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT for how a project might choose its own default.
 
 On UNIX one can use the DESTDIR mechanism in order to relocate the whole installation. See DESTDIR for more information.
+
+#### using files and directories in your cpp project
+if you want to use a directory containing binary files , xml , ui files and etc , your cmake-build-debug must be include
+those directories. 
+
+To use Binary files like image, png and etc.
+> file(COPY [dir] DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+or:
+
+> file(COPY [dir] DESTINATION ${CMAKE_BINARY_DIR})
+
+To another files like .css files and etc.
+>  file(COPY [dir] DESTINATION ${CMAKE_CACHEFILE_DIR})
+
+other options you can use :
+> file(COPY [dir] DESTINATION ${PROJECT_BINARY_DIR}) 

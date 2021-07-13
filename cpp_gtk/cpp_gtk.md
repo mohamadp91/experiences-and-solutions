@@ -103,3 +103,11 @@ Receive button press events
 
 [more details about another signals](https://developer.gimp.org/api/2.0/gdk/gdk-Events.html)
 
+#### loading css file
+```
+ auto css = Gtk::CssProvider::create();
+    css->load_from_path("style/file.css");
+    window1->get_style_context()->add_provider_for_screen(Gdk::Screen::get_default(),
+                                                          css,
+                                                          GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+```

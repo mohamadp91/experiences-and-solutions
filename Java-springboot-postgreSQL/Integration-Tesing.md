@@ -24,6 +24,9 @@ public class ApplicationIntegrationTests {
 
     HttpHeaders headers = new HttpHeaders();
     
+    @Test
+    public void shouldAddUser() throws Exception {
+    
      HttpEntity<?> entity = new HttpEntity<>(headers);
 
         UserModel user = new UserModel("1", "ali", new Date().toString(), "hello@gamil.com");
@@ -41,6 +44,7 @@ public class ApplicationIntegrationTests {
                 String.class);
 
         assertTrue(userRepository.existsById(user.getId()));
+    }
 ```
 
 ### @SpringBootTest(classes = MainClass, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -48,7 +52,8 @@ The @SpringBootTest annotation tells Spring Boot to look for a main configuratio
 for instance) and use that to start a Spring application context. 
 
 ### @LocalServerPort
-Annotation at the field or method/constructor parameter level that injects the HTTP port that got allocated at runtime. Provides a convenient alternative for @Value("${local.server.port}").
+Annotation at the field or method/constructor parameter level that injects the HTTP port that got allocated at runtime.
+Provides a convenient alternative for @Value("${local.server.port}").
 
 ### TestRestTemplate
 Convenient alternative of RestTemplate that is suitable for integration tests. They are fault tolerant, and optionally 

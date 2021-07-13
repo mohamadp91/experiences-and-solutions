@@ -29,7 +29,7 @@ server.port=8082
 ```
 ___
 
-`mvn -N io.takari:maven:wrapper`:
+`mvn -N io.takari:maven:wrapper` :
 Furthermore, to run MVN commands like Docker, Travis-CI needs to create .mvn dir
 before installing phases.
 ___
