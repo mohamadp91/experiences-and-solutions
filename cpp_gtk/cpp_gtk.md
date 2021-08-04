@@ -105,9 +105,25 @@ Receive button press events
 
 #### loading css file
 ```
- auto css = Gtk::CssProvider::create();
+    auto css = Gtk::CssProvider::create();
     css->load_from_path("style/file.css");
     window1->get_style_context()->add_provider_for_screen(Gdk::Screen::get_default(),
                                                           css,
                                                           GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 ```
+
+If _**background-color**_ property doesn't word properly , use _**background**_ instead.
+
+### release signal
+```
+this->signal_button_release_event().connect([&](GdkEventButton *e){
+    ...
+  });
+```
+
+The ::button-release-event signal will be emitted when a button (typically from a mouse) is released. in other word,
+when you stop using the mouse.
+
+To receive this signal, the GdkWindow associated to the widget needs to enable the GDK_BUTTON_RELEASE_MASK mask.
+
+This signal will be sent to the grab widget if there is one.

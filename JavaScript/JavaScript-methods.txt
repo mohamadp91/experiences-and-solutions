@@ -28,5 +28,7 @@
 // forEach()                                                                                                            **** void *********
 
 ** map( element => console.log(element))      perform action on element                                                 **** void *********
-** filter( element => element.id === x)      delete element which equal x                                               **** callback *****
-// find( element => element )                                                                                           **** callback *****
+** filter( element => element.id === x)      delete element which equal x                                               **** return array , ...  *****
+// find( element => element )                                                                                           **** return array , ... *****
+// Array.reduce((totalItem,currentItem,index) => totalItem + currentItem) this return sum of array values
+// Array.every(val => statement)  return a boolean

@@ -71,3 +71,4 @@ Represents an HTTP request or response entity, consisting of headers and body.
 The builder works in conjunction with the UriComponents class – an immutable container for URI components.
 A new UriComponentsBuilder class helps to create UriComponents instances by providing fine-grained control over all 
 aspects of preparing a URI including construction, expansion from template variables, and encoding.
+when you send request to a method with **_@RequestParam**_ use UriComponentsBuilders.
